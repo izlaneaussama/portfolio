@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aussama IZLANE— Developer </title>
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#6366f1',
+              light: '#818cf8',
+              dark:  '#4f46e5',
+            }
+          },
+          fontFamily: {
+            display: ['"Syne"', 'sans-serif'],
+            body:    ['"DM Sans"', 'sans-serif'],
+            mono:    ['"DM Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-body dark:bg-[#0d0d12] dark:text-slate-200 transition-colors duration-300">
+
+  <!-- ── NOISE OVERLAY ── -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════
+       NAVBAR
+  ════════════════════════════════ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#hero" class="font-display font-bold text-xl tracking-tight group">
+        <span class="text-accent"><b>AI</b></span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="hidden md:flex items-center gap-8 font-body text-sm font-medium tracking-wide">
+        <li><a href="#about"   class="nav-link">About</a></li>
+        <li><a href="#skills"  class="nav-link">Skills</a></li>
+        <li><a href="#projects"class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Right controls -->
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle dark mode"
+          class="w-9 h-9 rounded-full flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:border-accent dark:hover:border-accent text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-accent transition-all duration-200">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="hidden w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.07-.71.71M6.34 17.66l-.71.71m12.02 0-.71-.71M6.34 6.34l-.71-.71M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" aria-label="Open menu" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar short"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white dark:bg-[#13131d] border-t border-slate-100 dark:border-slate-800">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
+        <li><a href="#about"    class="mobile-nav-link">About</a></li>
+        <li><a href="#skills"   class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#contact"  class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- ════════════════════════════════
+       HERO
+  ════════════════════════════════ -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+
+    <!-- Background gradient blob -->
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="hero-blob-2" aria-hidden="true"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full">
+      <div class="max-w-3xl">
+
+        <!-- Eyebrow -->
+        <p class="font-mono text-sm text-accent tracking-[0.2em] uppercase mb-6 fade-in" style="animation-delay:0.1s">
+          Available for opportunities
+        </p>
+
+        <!-- Headline -->
+        <h1 class="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-6 fade-in" style="animation-delay:0.2s">
+          IZLANE<br />
+          <span class="text-gradient">AUSSAMA</span>
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="font-body text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed mb-10 fade-in" style="animation-delay:0.3s">
+          Computer Science student at FSDM. Full-stack developer &amp software developer. 
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 fade-in" style="animation-delay:0.4s">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact"  class="btn-ghost">Get In Touch</a>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="mt-20 fade-in" style="animation-delay:0.6s">
+          <div class="scroll-hint"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════
+       ABOUT
+  ════════════════════════════════ -->
+  <section id="about" class="py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Avatar placeholder -->
+        <div class="relative order-last md:order-first">
+          <div class="avatar-frame">
+            <div class="avatar-inner">
+              <div class="avatar-inner overflow-hidden border-2 border-accent">
+                  <img src="images/pfp_linkedin.png" alt="Aussama Izlane" class="w-full h-full object-cover shadow-lg">
+              </div>
+            </div>
+            <!-- Decorative ring -->
+            <div class="avatar-ring"></div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div>
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Code. Build. Scale</h2>
+          <div class="space-y-4 text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p>
+              I am <span class="text-slate-800 dark:text-white font-semibold">Aussama Izlane</span>, a Computer Science student at <strong>FSDM Fez</strong>. Originally from <strong>Tandit</strong>, I moved to Fez in 2019 to pursue my passion for technology.
+            </p>
+            <p>
+              After obtaining my Baccalaureate in 2024, I dived deep into <strong>Applied Informatics</strong>. I bridge the gap between low-level performance and modern web scalability, working with <strong>C/C++</strong> for software logic and <strong>Full-stack</strong> technologies for the web.
+            </p>
+            <p>
+              I focus on writing clean, efficient code and building products that are as functional as they are beautiful. Always learning, always building.
+            </p>
+          </div>
+
+          <!-- Stats -->
+          <div class="mt-8 grid grid-cols-3 gap-6">
+            <div class="stat-card">
+              <span class="stat-number">2024</span>
+              <span class="stat-label">Bac Year</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">L2</span>
+              <span class="stat-label">FSDM Student</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Linux</span>
+              <span class="stat-label">Daily Driver</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════
+       SKILLS
+  ════════════════════════════════ -->
+  <section id="skills" class="py-28 px-6 bg-slate-100/60 dark:bg-[#0a0a10]/60">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+  <div class="skill-card col-span-2">
+    <div class="skill-icon">⚙️</div>
+    <h3 class="skill-title">Software Engineering</h3>
+    <ul class="skill-list">
+      <li>C / C++ Programming</li>
+      <li>Data Structures & Algorithms</li>
+      <li>Memory Management</li>
+      <li>OOP Principles</li>
+    </ul>
+  </div>
+
+  <div class="skill-card col-span-2">
+    <div class="skill-icon">🌐</div>
+    <h3 class="skill-title">Full-Stack Web</h3>
+    <ul class="skill-list">
+      <li>HTML5 / CSS3 / JS</li>
+      <li>Tailwind CSS</li>
+      <li>Node.js / Express</li>
+      <li>SQL Databases</li>
+    </ul>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🐧</div>
+    <h3 class="skill-title">Linux & Systems</h3>
+    <ul class="skill-list">
+      <li>RedHat / Ubuntu</li>
+      <li>Bash Scripting</li>
+      <li>Vim / Nano</li>
+      <li>System Administration</li>
+    </ul>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🛠️</div>
+    <h3 class="skill-title">Tools</h3>
+    <ul class="skill-list">
+      <li>Git / GitHub</li>
+      <li>VS Code</li>
+      <li>GDB Debugger</li>
+    </ul>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🎓</div>
+    <h3 class="skill-title">Education</h3>
+    <ul class="skill-list">
+      <li>Computer Science @ FSDM</li>
+      <li>Discrete Mathematics</li>
+    </ul>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🧠</div>
+    <h3 class="skill-title">Personal</h3>
+    <ul class="skill-list">
+      <li>Problem Solving</li>
+      <li>Self-taught Spirit</li>
+      <li>Adaptability</li>
+    </ul>
+  </div>
+
+</div>
+  </section>
+
+
+  <!-- ════════════════════════════════
+       PROJECTS
+  ════════════════════════════════ -->
+  <section id="projects" class="py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-4">
+        <div>
+          <span class="section-label">Portfolio</span>
+          <h2 class="section-title">Selected work.</h2>
+        </div>
+        <a href="#" class="text-sm font-medium text-accent hover:underline underline-offset-4 shrink-0">All projects →</a>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="col-span-full py-20 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl flex flex-col items-center justify-center text-slate-400">
+           <span class="text-4xl mb-4">🚀</span>
+           <p class="font-body text-lg">New projects coming soon...</p>
+           <p class="text-sm">Currently working on exciting software solutions.</p>
+        </div>
+
+      </div>
+    <!-- </div>
+
+        Project Card 1
+        <article class="project-card md:col-span-2">
+          <div class="project-image" style="background: linear-gradient(135deg,#6366f122,#4f46e533)">
+            <span class="project-image-label">SaaS Dashboard</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">NovaDash — Analytics Platform</h3>
+            <p class="project-desc">Real-time analytics dashboard with AI-powered insights, custom charting, and multi-tenant support.</p>
+            <div class="project-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">AI</span>
+            </div>
+          </div>
+        </article>
+
+        Project Card 2
+        <article class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg,#10b98122,#0d948233)">
+            <span class="project-image-label">E-Commerce</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Leafy — Plant Shop</h3>
+            <p class="project-desc">Headless e-commerce storefront with blazing-fast performance and beautiful UI.</p>
+            <div class="project-tags">
+              <span class="tag">Shopify</span>
+              <span class="tag">Remix</span>
+              <span class="tag">Tailwind</span>
+            </div>
+          </div>
+        </article>
+
+        Project Card 3
+        <article class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg,#f59e0b22,#d9770633)">
+            <span class="project-image-label">Mobile App</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Pomo — Focus Timer</h3>
+            <p class="project-desc">Cross-platform Pomodoro app with habit tracking and team sync features.</p>
+            <div class="project-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">Expo</span>
+              <span class="tag">Supabase</span>
+            </div>
+          </div>
+        </article>
+
+         Project Card 4 
+        <article class="project-card md:col-span-2">
+          <div class="project-image" style="background: linear-gradient(135deg,#ec489922,#be185d33)">
+            <span class="project-image-label">Open Source</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">FormKit — Headless Form Library</h3>
+            <p class="project-desc">Accessible, composable form primitives for React with built-in validation and a11y. 2k+ GitHub stars.</p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Open Source</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div> -->
+  </section>
+
+
+  <!-- ════════════════════════════════
+       CONTACT
+  ════════════════════════════════ -->
+  <section id="contact" class="py-28 px-6 bg-slate-100/60 dark:bg-[#0a0a10]/60">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left copy -->
+        <div>
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Let's build something<br/>together.</h2>
+          <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+            I'm open to full-time roles, freelance projects, and interesting collaborations. Drop me a message and I'll get back to you within 24 hours.
+          </p>
+          <ul class="space-y-4">
+            <li class="contact-info-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:izlaneaussama2@gmail.com" class="hover:text-accent transition-colors">izlaneaussama2@gmail.com</a>
+            </li>
+            <li class="contact-info-item">
+              <span class="contact-icon">🐙</span>
+              <a href="https://github.com/izlaneaussama" class="hover:text-accent transition-colors">github.com/izlaneaussama</a> 
+            </li>
+            <li class="contact-info-item">
+              <span class="contact-icon">💼</span>
+              <a href="https://www.linkedin.com/in/aussama-izlane" class="hover:text-accent transition-colors">linkedin.com/in/aussama-izlane</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Form -->
+        <!-- <div class="contact-form-wrapper"> // hada tallmen be3d w nkhadmo b php 
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project inquiry" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." class="form-input resize-none" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center mt-2">Send Message →</button>
+          </form>
+        </div> -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
+  <footer class="py-8 px-6 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+      <p>© 2026 Aussama Izlane. All rights reserved.</p>
+      <p class="font-mono text-xs">Designed &amp; built with 💻 in Fes</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
